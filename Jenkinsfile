@@ -10,14 +10,14 @@ pipeline {
       stage('Git Checkout') {
          steps{
             // Get some code from a GitHub repository
-            git '/Users/manpreet/GitRepo/local-maven-project'
+            git 'https://github.com/manpreetsingh/anothermaven.git'
          }
       }
       stage('Maven Build') {
          steps {
 
             // Run Maven on a Unix agent.
-            sh "mvn clean package deploy"
+            sh "mvn clean package"
          }
 
          post {
